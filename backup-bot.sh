@@ -167,12 +167,12 @@ Thank You For Using Our Service
 ━━━━━━━━━━━━━━━━━━━
 Tanggal Backup : $date2
 ━━━━━━━━━━━━━━━━━━━
-Your Domain : $domain
+Your Domain : 
 Your IP VPS  : $ips
 ━━━━━━━━━━━━━━━━━━━
 Cara Restore ?
 1. Forward File Ini Ke Bot Direct Link/Mirror Link @direct_link69_bot
-2. Copy hasil restore ke menu restore di script william
+2. Copy hasil restore ke menu restore di script 
 
 Note: Mohon Dibaca
 - Jangan Lupa Mengaktifkan Auto backup Bot Telegram Agar Data Selalu TerUpdate
