@@ -74,6 +74,7 @@ cd /usr/bin
 wget --no-check-certificate -q -O menu2 "https://raw.githubusercontent.com/$repogithub/menu2.sh"
 wget --no-check-certificate -q -O del-exp "https://raw.githubusercontent.com/$repogithub/del-exp.sh"
 wget --no-check-certificate -q -O menu "https://raw.githubusercontent.com/$repogithub/menu.sh"
+wget --no-check-certificate -q -O menu "https://raw.githubusercontent.com/$repogithub/menu-setting.sh"
 wget --no-check-certificate -q -O menu-ss "https://raw.githubusercontent.com/$repogithub/menu-ss.sh"
 wget --no-check-certificate -q -O menu-ssh "https://raw.githubusercontent.com/$repogithub/menu-ssh.sh"
 wget --no-check-certificate -q -O menu-tr "https://raw.githubusercontent.com/$repogithub/menu-tr.sh"
@@ -182,6 +183,7 @@ wget --no-check-certificate -q -O change-limit "https://raw.githubusercontent.co
 wget --no-check-certificate -q -O unban-ssh "https://raw.githubusercontent.com/$repogithub/bigetron.sh"
 wget --no-check-certificate -q -O ban-ssh "https://raw.githubusercontent.com/$repogithub/blacklist.sh"
 chmod +x menu-ss
+chmod +x menu-setting
 chmod +x menu-ssh
 chmod +x menu-tr
 chmod +x menu-trgrpc
