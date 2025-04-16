@@ -77,8 +77,9 @@ else
 token="37a7dbff879d08"
 fi
 SCVERSION=$(cat /home/ver)
-ISP=$(curl -sL ipinfo.io?token=${token} | jq .org | cut -d " " -f 2-15 | tr -d "\"" | tr -d ",")
-CITY=$(curl -sL ipinfo.io?token=${token} | jq .city | tr -d "\"" | tr -d ",")
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+Name=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $2}')
 WKT=$(curl -sL ipinfo.io?token=${token} | jq .timezone | tr -d "\"" | tr -d ",")
 REGION=$(curl -sL ipinfo.io?token=${token} | jq .region | tr -d "\"" | tr -d ",")
 IPVPS=$(curl -sS ipinfo.io/ip )
@@ -151,8 +152,8 @@ _exists() {
 	xrayversion=$(xray -version | awk '{print $2}' | head -1)
 source /etc/os-release
 clear
-figlet -f small -t "      WILLIAM" | lolcat
-echo -e "              TELEGRAM : t.me/user_legend"
+figlet -f small -t "      ALVI CELL" | lolcat
+echo -e "              TELEGRAM : t.me/Alvi_cell"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "\E[41;1;37m                 ⇱ SYSTEM INFORMATION ⇲                 \E[0m"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -169,13 +170,12 @@ echo -e " \e[032;1mTOTAL SWAP:\e[0m $swap Total / $uswap Used"
 fi
 echo -e " \e[032;1mISP NAME:\e[0m $ISP"
 echo -e " \e[032;1mCITY:\e[0m $CITY"
-echo -e " \e[032;1mREGION:\e[0m $REGION"
 echo -e " \e[032;1mTIME:\e[0m $WKT"
 echo -e " \e[032;1mIP VPS:\e[0m $IPVPS"
 echo -e " \e[032;1mDOMAIN:\e[0m $DOMAIN"
 echo -e " \e[032;1mNS DOMAIN:\e[0m $nsdomain"
 echo -e " \e[032;1mXRAY VERSION:\e[0m $xrayversion"
-echo -e " \e[032;1mCLIENT NAME:\e[0m $clientname"
+echo -e " \e[032;1mCLIENT NAME:\e[0m $name"
 echo -e " \e[032;1mEXPIRED DATE:\e[0m $exp [$diff_days days remaining]"
 echo -e " \e[032;1mSCRIPT VERSION:\e[0m $SCVERSION"
 echo -e " \e[032;1mSYSTEM UPTIME:\e[0m $up"
