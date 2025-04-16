@@ -88,7 +88,7 @@ fi
 repogithub='kyt-team/premium/main'
 clear
 
-figlet -f small -t "       WILLIAM" | lolcat
+figlet -f small -t "       ALVI TUNNEL" | lolcat
 echo -e "                 ${green}AUTOSCRIPT INSTALLER v1${NC}  -  ${bold}©2020-2023${NC}"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "     $red TELEGRAM $NC : t.me/Alvi_cell"
