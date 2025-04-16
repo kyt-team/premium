@@ -153,7 +153,7 @@ echo -e "$green [•1]  $NC MENU SSH,SLOWDNS & OVPN [${green}menu-ssh${NC}]"
 echo -e "$green [•2]  $NC MENU VMESS WS [${green}menu-vmess${NC}]"
 echo -e "$green [•3]  $NC MENU VLESS WS [${green}menu-vless${NC}]"
 echo -e "$green [•4]  $NC MENU TROJAN WS [${green}menu-trws${NC}]"
-echo -e "$green [•5] $NC MENU SETTING [${green}menu-bundling${NC}]"
+echo -e "$green [•5] $NC MENU SETTING [${green}menu-setting${NC}]"
 
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " ${red}  CLIENT NAME :${NC} $clientname        |      ${red}EXP DATE :${NC} $exp  "
