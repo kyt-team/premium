@@ -177,7 +177,7 @@ menu-vless
 menu-trws
 ;;
 5)
-menu-setting.sh
+menu-setting
 ;;
 x)
 clear
