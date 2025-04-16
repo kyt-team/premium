@@ -136,7 +136,7 @@ echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}$Name ${NC}"
 echo -e "  ${BLUE}• ${GREEN}Script Exfire       ${NC}= ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
-echo -e "  ${BLUE}• ${GREEN}Developer           ${NC}= KlmpkVPN Tunneling ${NC}"
+echo -e "  ${BLUE}• ${GREEN}Developer           ${NC}= ALVI CELL ${NC}"
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "                     << STATUS SERVICE >>                    \E[0m" | lolcat
 echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
