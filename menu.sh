@@ -48,9 +48,7 @@ fi
 
 # =========================================
 vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
-let vla=$vlx/2
-vmc=$(grep -c -E "^### " "/etc/xray/config.json")
-let vma=$vmc/2
+
 ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 
 trx=$(grep -c -E "^#! " "/etc/xray/config.json")
@@ -144,7 +142,7 @@ echo -e "$green [•2]  $NC MENU VMESS "
 echo -e "$green [•3]  $NC MENU VLESS "
 echo -e "$green [•4]  $NC MENU TROJAN"
 echo -e "$green [•5]  $NC MENU SETTING "
-echo -e "$green [•5]  $NC MENU INFORMASI "
+echo -e "$green [•6]  $NC MENU INFORMASI "
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e   ""
 echo -e "[CTRL + C] For Exit From Main Menu"
