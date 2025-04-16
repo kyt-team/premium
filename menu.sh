@@ -157,7 +157,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e   ""
 echo -e "[CTRL + C] For Exit From Main Menu"
 echo -e   ""
-read -p "Select From Options [1-37 or x] :  " menu
+read -p "Select From Options [1-5 or x] :  " menu
 echo -e ""
 case $menu in
 1)
