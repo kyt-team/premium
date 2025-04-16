@@ -364,9 +364,8 @@ echo "   - Autobackup Data Via BOT Telegram"  | tee -a log-install.txt
 echo "   - Restore Data"  | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""   | tee -a log-install.txt
-echo "   - Dev/Main                : william"  | tee -a log-install.txt
-echo "   - Telegram                : t.me/user_legend"  | tee -a log-install.txt
-echo "   - Facebook                : https://www.facebook.com/userlegend69"  | tee -a log-install.txt
+echo "   - Dev/Main                : ALVI TUNNEL"  | tee -a log-install.txt
+echo "   - Telegram                : t.me/Alvi_cell"  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "=================================================================="  | tee -a log-install.txt
 echo " Reboot 15 Sec"
