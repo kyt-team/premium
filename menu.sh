@@ -165,7 +165,7 @@ menu2
 ;;
 x)
 clear
-menu2
+menu
 ;;
 *)
 echo " Please Choose Number !"
