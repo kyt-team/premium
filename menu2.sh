@@ -10,7 +10,57 @@ green='\e[0;32m'
 NC='\e[0m'
 IP=$(curl -sS ipinfo.io/ip > /tmp/ipaddress.txt)
 MYIP=$(cat /tmp/ipaddress.txt)
+ipsaya=$(wget -qO- ipinfo.io/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+data_ip="https://raw.githubusercontent.com/kyt-team/regip/main/ip"
+checking_sc() {
+  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
+  if [[ $date_list < $useexp ]]; then
+    echo -ne
+  else
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e "\033[42m          404 NOT FOUND AUTOSCRIPT          \033[0m"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e ""
+    echo -e "            ${RED}PERMISSION DENIED !${NC}"
+    echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
+    echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
+    echo -e "             \033[0;33mContact Admin :${NC}"
+    echo -e "      \033[0;36mTelegram${NC} t.me/Alvi_cell"
+    echo -e "      ${GREEN}WhatsApp${NC} wa.me/6282183496832"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    exit
+  fi
+}
+checking_sc
+clear
 
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $2}')
+if [ "$res" = "Expired" ]; then
+Exp="\e[36mExpired\033[0m"
+else
+Exp=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $3}')
+fi
+
+# =========================================
+vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
+
+ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+
+trx=$(grep -c -E "^#! " "/etc/xray/config.json")
+let tra=$trx/2
+ssx=$(grep -c -E "^## " "/etc/xray/config.json")
+
+UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
+# // Exporting Language to UTF-8
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
+export LC_CTYPE='en_US.utf8'
 # cek wget & curl
 if ! which wget > /dev/null; then
 clear
@@ -70,236 +120,56 @@ MYIP=$(dig +short "$cekdomen" | head -n 1)
 fi
 repogithub='kyt-team/premium/main'
 clear
-
-if [ "${RND}" > 25 ]; then
-token="06f54274ad91b8"
-else
-token="37a7dbff879d08"
-fi
-SCVERSION=$(cat /home/ver)
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-Name=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $2}')
-WKT=$(curl -sL ipinfo.io?token=${token} | jq .timezone | tr -d "\"" | tr -d ",")
-REGION=$(curl -sL ipinfo.io?token=${token} | jq .region | tr -d "\"" | tr -d ",")
-IPVPS=$(curl -sS ipinfo.io/ip )
-DOMAIN=$(cat /etc/xray/domain)
-nsdomain=$(cat /etc/ns/domain)
-target_epoch=$(date -d "$exp" +%s)
-current_epoch=$(date +%s)
-diff_epoch=$((target_epoch - current_epoch + 86400))
-diff_days=$((diff_epoch / 86400))
-calc_size() {
-    local raw=$1
-    local total_size=0
-    local num=1
-    local unit="KB"
-    if ! [[ ${raw} =~ ^[0-9]+$ ]] ; then
-        echo ""
-        return
-    fi
-    if [ "${raw}" -ge 1073741824 ]; then
-        num=1073741824
-        unit="TB"
-    elif [ "${raw}" -ge 1048576 ]; then
-        num=1048576
-        unit="GB"
-    elif [ "${raw}" -ge 1024 ]; then
-        num=1024
-        unit="MB"
-    elif [ "${raw}" -eq 0 ]; then
-        echo "${total_size}"
-        return
-    fi
-    total_size=$( awk 'BEGIN{printf "%.1f", '$raw' / '$num'}' )
-    echo "${total_size} ${unit}"
-}
-_exists() {
-    local cmd="$1"
-    if eval type type > /dev/null 2>&1; then
-        eval type "$cmd" > /dev/null 2>&1
-    elif command > /dev/null 2>&1; then
-        command -v "$cmd" > /dev/null 2>&1
-    else
-        which "$cmd" > /dev/null 2>&1
-    fi
-    local rt=$?
-    return ${rt}
-}
-    arch=$( uname -m )
-    if _exists "getconf"; then
-        lbit=$( getconf LONG_BIT )
-    else
-        echo ${arch} | grep -q "64" && lbit="64" || lbit="32"
-    fi
-	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
-	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
-	freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
-    disk_total_size=$( LANG=C; df -t simfs -t ext2 -t ext3 -t ext4 -t btrfs -t xfs -t vfat -t ntfs -t swap --total 2>/dev/null | grep total | awk '{ print $2 }' )
-    disk_total_size=$( calc_size $disk_total_size )
-    disk_used_size=$( LANG=C; df -t simfs -t ext2 -t ext3 -t ext4 -t btrfs -t xfs -t vfat -t ntfs -t swap --total 2>/dev/null | grep total | awk '{ print $3 }' )
-    disk_used_size=$( calc_size $disk_used_size )
-    tram=$( LANG=C; free | awk '/Mem/ {print $2}' )
-    tram=$( calc_size $tram )
-    uram=$( LANG=C; free | awk '/Mem/ {print $3}' )
-    uram=$( calc_size $uram )
-    swap=$( LANG=C; free | awk '/Swap/ {print $2}' )
-    swap=$( calc_size $swap )
-    uswap=$( LANG=C; free | awk '/Swap/ {print $3}' )
-    uswap=$( calc_size $uswap )
-	up=$(awk '{a=$1/86400;b=($1%86400)/3600;c=($1%3600)/60} {printf("%d days, %d hour %d min\n",a,b,c)}' /proc/uptime)
-	kernel=$(uname -ar | cut -d " " -f 3-3)
-	xrayversion=$(xray -version | awk '{print $2}' | head -1)
-source /etc/os-release
+echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
+echo -e "                      << ALVI TUNNEL >>                    \E[0m" | lolcat
+echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
+echo -e "  ${BLUE}• ${GREEN}Sever Uptime        ${NC}= $( uptime -p  | cut -d " " -f 2-10000 ) "
+echo -e "  ${BLUE}• ${GREEN}Operating System    ${NC}= $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g')( $(uname -m))"
+echo -e "  ${BLUE}• ${GREEN}Domain              ${NC}= $( cat /etc/xray/domain )"
+echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
+echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
+echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
+echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}$Name ${NC}"
+echo -e "  ${BLUE}• ${GREEN}Script Exfired      ${NC}= ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green [•1]  $NC MENU SSH"             
+echo -e "$green [•2]  $NC MENU VMESS "
+echo -e "$green [•3]  $NC MENU VLESS "
+echo -e "$green [•4]  $NC MENU TROJAN"
+echo -e "$green [•5]  $NC MENU SETTING "
+echo -e "$green [•6]  $NC MENU INFORMASI "
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e   ""
+echo -e "[CTRL + C] For Exit From Main Menu"
+echo -e   ""
+read -p "Select From Options [1-5 or x] :  " menu
+echo -e ""
+case $menu in
+1)
+menu-ssh
+;;
+2)
+menu-vmess
+;;
+3)
+menu-vless
+;;
+4)
+menu-trws
+;;
+5)
+menu-setting
+;;
+6)
+menu3
+;;
+x)
 clear
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e "\E[41;1;37m                 ⇱ SYSTEM INFORMATION ⇲                 \E[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e " \e[032;1mOS SYSTEM:\e[0m $PRETTY_NAME"
-echo -e " \e[032;1mARCH:\e[0m $arch ($lbit Bit)"
-echo -e " \e[032;1mKERNEL TYPE:\e[0m $kernel"
-echo -e " \e[032;1mCPU MODEL:\e[0m $cname"
-echo -e " \e[032;1mNUMBER OF CORES:\e[0m $cores"
-echo -e " \e[032;1mCPU FREQUENCY:\e[0m $freq MHz"
-echo -e " \e[032;1mTOTAL RAM:\e[0m $tram Total / $uram Used"
-echo -e " \e[032;1mTOTAL STORAGE:\e[0m $disk_total_size Total / $disk_used_size Used"
-if [ "$swap" != "0" ]; then
-echo -e " \e[032;1mTOTAL SWAP:\e[0m $swap Total / $uswap Used"
-fi
-echo -e " \e[032;1mISP NAME:\e[0m $ISP"
-echo -e " \e[032;1mCITY:\e[0m $CITY"
-echo -e " \e[032;1mIP VPS:\e[0m $IPVPS"
-echo -e " \e[032;1mDOMAIN:\e[0m $DOMAIN"
-echo -e " \e[032;1mNS DOMAIN:\e[0m $nsdomain"
-echo -e " \e[032;1mXRAY VERSION:\e[0m $xrayversion"
-
-echo -e " \e[032;1mSCRIPT VERSION:\e[0m $SCVERSION"
-echo -e " \e[032;1mSYSTEM UPTIME:\e[0m $up"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e "\E[41;1;37m                 ⇱ SERVICE INFORMATION ⇲                \E[0m"
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-status="$(systemctl show ssh.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " SSH               : SSH Service is "$green"Running"$NC""
-else
-echo -e " SSH               : SSH Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show udp-custom.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " SSH UDP           : SSH UDP Service is "$green"Running"$NC""
-else
-echo -e " SSH UDP           : SSH UDP Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show cdn.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " SSH WEBSOCKET     : SSH Websocket Service is "$green"Running"$NC""
-else
-echo -e " SSH WEBSOCKET     : SSH Websocket Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show openvpn.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " OVPN              : OVPN Service is "$green"Running"$NC""
-else
-echo -e " OVPN              : OVPN  Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show cdn-ovpn.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " OVPN WEBSOCKET    : OVPN Websocket Service is "$green"Running"$NC""
-else
-echo -e " OVPN WEBSOCKET    : OVPN Websocket Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show stunnel5.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " STUNNEL5          : Stunnel5 Service is "$green"Running"$NC""
-else
-echo -e " STUNNEL5          : Stunnel5 Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show slowdns.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " SLOWDNS           : Slowdns Service is "$green"Running"$NC""
-else
-echo -e " SLOWDNS           : Slowdns Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show squid.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " SQUID             : Squid Service is "$green"Running"$NC""
-else
-echo -e " SQUID             : Squid Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show dropbear.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " DROPBEAR          : DropBear Service is "$green"Running"$NC""
-else
-echo -e " DROPBEAR          : DropBear Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show xray.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " XRAY TLS          : XRAY TLS Service is "$green"Running"$NC""
-else
-echo -e " XRAY TLS          : XRAY TLS Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show xray@none.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " XRAY NTLS         : XRAY NTLS Service is "$green"Running"$NC""
-else
-echo -e " XRAY NTLS         : XRAY NTLS Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show xl2tpd.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " L2TP              : L2TP Service is "$green"Running"$NC""
-else
-echo -e " L2TP              : L2TP Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show nginx.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " NGINX             : Nginx Service is "$green"Running"$NC""
-else
-echo -e " NGINX             : Nginx Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show cron.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " CRON              : Cron Service is "$green"Running"$NC""
-else
-echo -e " CRON              : Cron Service is "$red"Not Running"$NC""
-fi
-status="$(systemctl show cron.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " FAIL2BAN          : Fail2ban Service is "$green"Running"$NC""
-else
-echo -e " FAIL2BAN          : Fail2ban Service is "$red"Not Running"$NC""
-fi
-echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-
-echo -e  ""
-echo -e  "               type \033[1;91mmenu\e[0m to continue"
-echo -e  ""
+menu
+;;
+*)
+echo " Please Choose Number !"
+sleep 2 
+menu
+;;
+esac
