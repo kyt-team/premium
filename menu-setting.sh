@@ -167,7 +167,7 @@ wbmn
 speedtest
 ;;
 20)
-menu2
+menu3
 ;;
 21)
 warp
