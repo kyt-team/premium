@@ -72,6 +72,7 @@ clear
 
 cd /usr/bin
 wget --no-check-certificate -q -O menu2 "https://raw.githubusercontent.com/$repogithub/menu2.sh"
+wget --no-check-certificate -q -O menu3 "https://raw.githubusercontent.com/$repogithub/menu3.sh"
 wget --no-check-certificate -q -O del-exp "https://raw.githubusercontent.com/$repogithub/del-exp.sh"
 wget --no-check-certificate -q -O menu "https://raw.githubusercontent.com/$repogithub/menu.sh"
 wget --no-check-certificate -q -O menu-setting "https://raw.githubusercontent.com/$repogithub/menu-setting.sh"
@@ -206,6 +207,7 @@ chmod +x cek-tls
 chmod +x cek-ntls
 chmod +x change-port
 chmod +x menu2
+chmod +x menu3
 chmod +x menu
 chmod +x add-ssh
 chmod +x trial-ssh
