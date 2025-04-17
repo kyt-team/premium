@@ -168,7 +168,6 @@ echo -e " \e[032;1mTOTAL SWAP:\e[0m $swap Total / $uswap Used"
 fi
 echo -e " \e[032;1mISP NAME:\e[0m $ISP"
 echo -e " \e[032;1mCITY:\e[0m $CITY"
-echo -e " \e[032;1mTIME:\e[0m $WKT"
 echo -e " \e[032;1mIP VPS:\e[0m $IPVPS"
 echo -e " \e[032;1mDOMAIN:\e[0m $DOMAIN"
 echo -e " \e[032;1mNS DOMAIN:\e[0m $nsdomain"
