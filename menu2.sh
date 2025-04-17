@@ -152,8 +152,6 @@ _exists() {
 	xrayversion=$(xray -version | awk '{print $2}' | head -1)
 source /etc/os-release
 clear
-figlet -f small -t "      ALVI CELL" | lolcat
-echo -e "              TELEGRAM : t.me/Alvi_cell"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "\E[41;1;37m                 ⇱ SYSTEM INFORMATION ⇲                 \E[0m"
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
