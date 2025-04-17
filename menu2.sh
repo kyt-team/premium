@@ -161,7 +161,7 @@ menu-trws
 menu-setting
 ;;
 6)
-info
+menu3
 ;;
 x)
 clear
