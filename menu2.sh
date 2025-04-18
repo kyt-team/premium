@@ -124,13 +124,9 @@ echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}$Name ${NC}"
 echo -e "  ${BLUE}• ${GREEN}Script Exfired      ${NC}= ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
-# Spinner Emoji Muter-Muter
-spinner=( "🌑" "🌒" "🌓" "🌔" "🌕" "🌖" "🌗" "🌘" )
-for i in {1..16}; do
-    echo -ne "\r${GREEN}Loading ${spinner[$i % 8]}${NC}"
-    sleep 0.1
 
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ Menu Utama ━━━━━━━━━━━━━━━━━━━${NC}"
+
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[2]${NC} ⚡ MENU VMESS"
 echo -e "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[4]${NC} 🔐 MENU TROJAN"
 echo -e "${GREEN}[5]${NC} ⚙️  MENU SETTING    ${GREEN}[6]${NC} 📖 MENU INFORMASI"
