@@ -154,7 +154,7 @@ echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
 echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${RED}${Name}${NC}"
-echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${RED}${Exp}${NC} ${RED}(${DayLeft})${NC}"
+echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${RED}${Exp}${NC} (${RED}${DayLeft})${NC}"
 echo -e "${BLUE} ${NC}"
 # Menu Utama
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
