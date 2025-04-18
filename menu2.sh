@@ -128,8 +128,6 @@ echo -e "  ${BLUE}• ${GREEN}Script Exfired      ${NC}= ${YELLOW}$Exp (${NC}${R
 text="🌐 WELCOME TO ALVI TUNNEL - TERIMAKASIH TELAH MENGGUNAKAN LAYANAN KAMI 🌐 "
 length=${#text}
 for (( i=0; i<length; i++ )); do
-    tput sc
-    echo -ne "${text:$i}${text:0:$i}" | lolcat
     sleep 0.1
     tput rc
 done
