@@ -124,12 +124,11 @@ echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}$Name ${NC}"
 echo -e "  ${BLUE}• ${GREEN}Script Exfired      ${NC}= ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
-# Animasi Teks Berjalan Warna-Warni
-text="🌐 WELCOME TO ALVI TUNNEL - TERIMAKASIH TELAH MENGGUNAKAN LAYANAN KAMI 🌐 "
-length=${#text}
-for (( i=0; i<length; i++ )); do
+# Spinner Emoji Muter-Muter
+spinner=( "🌑" "🌒" "🌓" "🌔" "🌕" "🌖" "🌗" "🌘" )
+for i in {1..16}; do
+    echo -ne "\r${GREEN}Loading ${spinner[$i % 8]}${NC}"
     sleep 0.1
-    tput rc
 done
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ Menu Utama ━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[2]${NC} ⚡ MENU VMESS"
