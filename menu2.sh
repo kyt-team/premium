@@ -39,7 +39,7 @@ clear
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
 #!/bin/bash
-
+Name=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $2}')
 MYIP=$(curl -sS ipv4.icanhazip.com)
 res=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $3}')
 
@@ -62,8 +62,8 @@ else
 fi
 
 # Tampilkan hasil
-echo -e "Status Expired: $Exp"
-echo -e "Sisa Masa Aktif: $DayLeft"
+#echo -e "Status Expired: $Exp"
+#echo -e "Sisa Masa Aktif: $DayLeft"
 
 
 
@@ -154,7 +154,7 @@ echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
 echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}${Name}${NC}"
-echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${YELLOW}${Exp}${NC} ${RED}(${selisih} Days)${NC}"
+echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${YELLOW}${Exp}${NC} ${RED}(${DayLeft} Hari)${NC}"
 echo -e "${BLUE} ${NC}"
 # Menu Utama
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━${NC}"
