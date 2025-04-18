@@ -158,9 +158,9 @@ echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${YELLOW}${Exp}${NC} ${
 echo -e "${BLUE} ${NC}"
 # Menu Utama
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[2]${NC} ⚡ MENU VMESS"
-echo -e "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[4]${NC} 🔐 MENU TROJAN"
-echo -e "${GREEN}[5]${NC} ⚙️  MENU SETTING    ${GREEN}[6]${NC} 📖 MENU INFORMASI"
+echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[4]${NC} 🔐 MENU TROJAN"
+echo -e "${GREEN}[2]${NC} ⚡ MENU VMESS      ${GREEN}[5]${NC} ⚙️ MENU SETTING"
+echo -e "${GREEN}[3]${NC} 💎 MENU VMESS      ${GREEN}[6]${NC} 📖 MENU INFORMASI"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo -e   ""
