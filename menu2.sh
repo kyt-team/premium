@@ -153,13 +153,13 @@ echo -e "  ${BLUE}• ${GREEN}Domain              ${NC}= $(cat /etc/xray/domain)
 echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
 echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
-echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}${Name}${NC}"
-echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${YELLOW}${Exp}${NC} (${DayLeft})${NC}"
+echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${RED}${Name}${NC}"
+echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${RED}${Exp}${NC} ${RED}(${DayLeft})${NC}"
 echo -e "${BLUE} ${NC}"
 # Menu Utama
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e      "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[4]${NC} 🔐 MENU TROJAN"
-echo -e      "${GREEN}[2]${NC} ⚡ MENU VMESS      ${GREEN}[5]${NC} ⚙️ MENU SETTING"
+echo -e      "${GREEN}[2]${NC} ⏰ MENU VMESS      ${GREEN}[5]${NC} ⚙️ MENU SETTING"
 echo -e      "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[6]${NC} 📖 MENU INFORMASI"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
