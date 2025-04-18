@@ -129,7 +129,7 @@ spinner=( "🌑" "🌒" "🌓" "🌔" "🌕" "🌖" "🌗" "🌘" )
 for i in {1..16}; do
     echo -ne "\r${GREEN}Loading ${spinner[$i % 8]}${NC}"
     sleep 0.1
-done
+
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ Menu Utama ━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[2]${NC} ⚡ MENU VMESS"
 echo -e "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[4]${NC} 🔐 MENU TROJAN"
