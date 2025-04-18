@@ -289,4 +289,4 @@ chmod +x add-limit
 chmod +x change-limit
 chmod +x unban-ssh
 chmod +x ban-ssh
-echo -e "update selesai silakan ketik menu...."
+echo e "update selesai silakan ketik menu...."
