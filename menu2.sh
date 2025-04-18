@@ -120,12 +120,13 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 COLOR1='\033[0;36m'
-    # Hitung dayleft
-    now_date=$(date +%Y-%m-%d)
-    d1=$(date -d "$ExpRaw" +%s)
-    d2=$(date -d "$now_date" +%s)
-    dayleft=$(( (d1 - d2) / 86400 ))
-    
+    # Validasi format ExpRaw = YYYY-MM-DD
+    if date -d "$ExpRaw" "+%Y-%m-%d" >/dev/null 2>&1; then
+        Exp="${YELLOW}$ExpRaw${NC}"
+        now_date=$(date +%Y-%m-%d)
+        d1=$(date -d "$ExpRaw" +%s)
+        d2=$(date -d "$now_date" +%s)
+        selisih=$(( (d1 - d2) / 86400 ))
 # Header Box
 echo -e "${COLOR1}╔══════════════════════════════════════════════════════╗${NC}"
 echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                   ${COLOR1}║${NC}"
@@ -139,7 +140,7 @@ echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
 echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}${Name}${NC}"
-echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${YELLOW}${Exp}${NC} ${RED}(${dayleft} Days)${NC}"
+echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${YELLOW}${Exp}${NC} ${RED}(${selisih} Days)${NC}"
 echo -e "${BLUE} ${NC}"
 # Menu Utama
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━${NC}"
