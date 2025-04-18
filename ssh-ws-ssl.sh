@@ -92,7 +92,7 @@ cat > /etc/systemd/system/cdn.service << END
 [Unit]
 Description=P7COM-nodews1-WILLIAM
 Documentation=https://p7com.net/
-Documentation=https://t.me/user_legend
+Documentation=https://t.me/Alvi_cell
 After=network.target nss-lookup.target
 
 [Service]
@@ -120,7 +120,7 @@ apt install python2 -y
 cat > /etc/systemd/system/cdn-ovpn.service << END 
 [Unit]
 Description=WS-OPENVPN By william
-Documentation=https://t.me/user_legend
+Documentation=https://t.me/Alvi_cell
 After=network.target nss-lookup.target
 
 [Service]
@@ -139,7 +139,7 @@ else
 cat > /etc/systemd/system/cdn-ovpn.service << END 
 [Unit]
 Description=WS-OPENVPN By william
-Documentation=https://t.me/user_legend
+Documentation=https://t.me/Alvi_cell
 After=network.target nss-lookup.target
 
 [Service]
