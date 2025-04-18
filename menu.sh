@@ -160,7 +160,7 @@ echo -e "${BLUE} ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e      "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[4]${NC} 🔐 MENU TROJAN"
 echo -e      "${GREEN}[2]${NC} ⚡ MENU VMESS      ${GREEN}[5]${NC} ⚙️ MENU SETTING"
-echo -e      "${GREEN}[3]${NC} 💎 MENU VMESS      ${GREEN}[6]${NC} 📖 MENU INFORMASI"
+echo -e      "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[6]${NC} 📖 MENU INFORMASI"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo -e   ""
