@@ -45,12 +45,7 @@ Exp="\e[36mExpired\033[0m"
 else
 Exp=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $3}')
 fi
-    # Hitung dayleft
-    now_date=$(date +%Y-%m-%d)
-    d1=$(date -d "$ExpRaw" +%s)
-    d2=$(date -d "$now_date" +%s)
-    dayleft=$(( (d1 - d2) / 86400 ))
-fi
+
 
 
 UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
@@ -125,7 +120,12 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 COLOR1='\033[0;36m'
-
+    # Hitung dayleft
+    now_date=$(date +%Y-%m-%d)
+    d1=$(date -d "$ExpRaw" +%s)
+    d2=$(date -d "$now_date" +%s)
+    dayleft=$(( (d1 - d2) / 86400 ))
+fi
 # Header Box
 echo -e "${COLOR1}╔══════════════════════════════════════════════════════╗${NC}"
 echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                   ${COLOR1}║${NC}"
