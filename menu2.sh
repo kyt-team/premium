@@ -124,6 +124,15 @@ echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
 echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}$Name ${NC}"
 echo -e "  ${BLUE}• ${GREEN}Script Exfired      ${NC}= ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
+# Animasi Teks Berjalan Warna-Warni
+text="🌐 WELCOME TO ALVI TUNNEL - TERIMAKASIH TELAH MENGGUNAKAN LAYANAN KAMI 🌐 "
+length=${#text}
+for (( i=0; i<length; i++ )); do
+    tput sc
+    echo -ne "${text:$i}${text:0:$i}" | lolcat
+    sleep 0.1
+    tput rc
+done
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ Menu Utama ━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[2]${NC} ⚡ MENU VMESS"
 echo -e "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[4]${NC} 🔐 MENU TROJAN"
