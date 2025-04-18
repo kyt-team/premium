@@ -161,7 +161,7 @@ echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU U
 echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[2]${NC} ⚡ MENU VMESS"
 echo -e "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[4]${NC} 🔐 MENU TROJAN"
 echo -e "${GREEN}[5]${NC} ⚙️  MENU SETTING    ${GREEN}[6]${NC} 📖 MENU INFORMASI"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo -e   ""
 echo -e "[CTRL + C] For Exit From Main Menu"
