@@ -38,13 +38,33 @@ clear
 
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
-MYIP=$(curl -sS ipv4.icanhazip.com)
+#!/bin/bash
 Name=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $2}')
+MYIP=$(curl -sS ipv4.icanhazip.com)
+res=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $3}')
+
+# Jika Expired
 if [ "$res" = "Expired" ]; then
-Exp="\e[36mExpired\033[0m"
+    Exp="\e[31mExpired\033[0m"
+    DayLeft="0 Hari"
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $3}')
+    Exp=$res
+    # Hitung sisa masa aktif (dayleft)
+    today=$(date +%s)
+    exp_date=$(date -d "$Exp" +%s)
+    sisa_hari=$(( (exp_date - today) / 86400 ))
+    
+    if [ $sisa_hari -lt 0 ]; then
+        DayLeft="\e[31m0 Hari (Expired)\033[0m"
+    else
+        DayLeft="\e[32m${sisa_hari} Hari\033[0m"
+    fi
 fi
+
+# Tampilkan hasil
+#echo -e "Status Expired: $Exp"
+#echo -e "Sisa Masa Aktif: $DayLeft"
+
 
 
 
@@ -113,25 +133,36 @@ MYIP=$(dig +short "$cekdomen" | head -n 1)
 fi
 repogithub='kyt-team/premium/main'
 clear
-echo -e "$COLOR1┌────────────────────────────────────────────────────────────┐${NC}"
-echo -e "                      << ALVI TUNNEL >>                    \E[0m" | lolcat
-echo -e "$COLOR1└────────────────────────────────────────────────────────────┘${NC}"
-echo -e "  ${BLUE}• ${GREEN}Sever Uptime        ${NC}= $( uptime -p  | cut -d " " -f 2-10000 ) "
-echo -e "  ${BLUE}• ${GREEN}Operating System    ${NC}= $( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g')( $(uname -m))"
-echo -e "  ${BLUE}• ${GREEN}Domain              ${NC}= $( cat /etc/xray/domain )"
+# Warna
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+COLOR1='\033[0;36m'
+
+# Header Box
+echo -e "${COLOR1}╔══════════════════════════════════════════════════════╗${NC}"
+echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                   ${COLOR1}║${NC}"
+echo -e "${COLOR1}╚══════════════════════════════════════════════════════╝${NC}"
+
+# Informasi VPS
+echo -e "  ${BLUE}• ${GREEN}Server Uptime       ${NC}= $(uptime -p | cut -d ' ' -f 2-10000)"
+echo -e "  ${BLUE}• ${GREEN}Operating System    ${NC}= $(grep -w PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '\"')( $(uname -m) )"
+echo -e "  ${BLUE}• ${GREEN}Domain              ${NC}= $(cat /etc/xray/domain)"
 echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
 echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
 echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
-echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}$Name ${NC}"
-echo -e "  ${BLUE}• ${GREEN}Script Exfired      ${NC}= ${YELLOW}$Exp (${NC}${RED} $dayleft Days ${NC}${YELLOW})${NC}"
-echo -e "${BLUE}${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${YELLOW}${Name}${NC}"
+echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${YELLOW}${Exp}${NC} ${RED}(${DayLeft} )${NC}"
+echo -e "${BLUE} ${NC}"
+# Menu Utama
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[2]${NC} ⚡ MENU VMESS"
 echo -e "${GREEN}[3]${NC} 💎 MENU VLESS      ${GREEN}[4]${NC} 🔐 MENU TROJAN"
 echo -e "${GREEN}[5]${NC} ⚙️  MENU SETTING    ${GREEN}[6]${NC} 📖 MENU INFORMASI"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e   ""
-echo -e "[CTRL + C] For Exit From Main Menu"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
 echo -e   ""
 read -p "Select From Options [1-6 or x] :  " menu
 echo -e ""
