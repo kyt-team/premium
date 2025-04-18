@@ -100,7 +100,7 @@ echo -e "$green [•22] $NC VIEW SERVER'S TOTAL BANDWIDTH [${green}vnstat${NC}]"
 echo -e "$green [•23] $NC VIEW PROTOCOL & PORT INFORMATION [${green}info${NC}]"
 echo -e "$green [•24] $NC REBOOT SERVER [${green}reboot${NC}]"
 echo -e "$green [•25] $NC MENU BUNDLING [${green}menu-bundling${NC}]"
-echo -e "$green [•26] $NC UUPDATE SCRIPT"
+echo -e "$green [•26] $NC UPDATE SCRIPT"
 
 echo -e   ""
 echo -e "[CTRL + C] For Exit From Main Menu"
