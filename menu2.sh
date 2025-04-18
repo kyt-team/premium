@@ -120,13 +120,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 COLOR1='\033[0;36m'
-    # Validasi format ExpRaw = YYYY-MM-DD
-    if date -d "$ExpRaw" "+%Y-%m-%d" >/dev/null 2>&1; then
-        Exp="${YELLOW}$ExpRaw${NC}"
-        now_date=$(date +%Y-%m-%d)
-        d1=$(date -d "$ExpRaw" +%s)
-        d2=$(date -d "$now_date" +%s)
-        selisih=$(( (d1 - d2) / 86400 ))
+
 # Header Box
 echo -e "${COLOR1}╔══════════════════════════════════════════════════════╗${NC}"
 echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                   ${COLOR1}║${NC}"
