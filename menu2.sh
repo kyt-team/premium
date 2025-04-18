@@ -123,7 +123,7 @@ COLOR1='\033[0;36m'
 
 # Header Box
 echo -e "${COLOR1}╔══════════════════════════════════════════════════════╗${NC}"
-echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                    ${COLOR1}║${NC}"
+echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                   ${COLOR1}║${NC}"
 echo -e "${COLOR1}╚══════════════════════════════════════════════════════╝${NC}"
 
 # Informasi VPS
