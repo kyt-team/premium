@@ -160,6 +160,7 @@ wget --no-check-certificate -q -O renew-vlessgrpc "https://raw.githubusercontent
 wget --no-check-certificate -q -O add-trgrpc "https://raw.githubusercontent.com/$repogithub/add-trgrpc.sh"
 wget --no-check-certificate -q -O del-trgrpc "https://raw.githubusercontent.com/$repogithub/del-trgrpc.sh"
 wget --no-check-certificate -q -O renew-trgrpc "https://raw.githubusercontent.com/$repogithub/renew-trgrpc.sh"
+echo "SEBENTAR LAGI SELESAI..."
 wget --no-check-certificate -q -O menu-bundling "https://raw.githubusercontent.com/$repogithub/menu-bundling.sh"
 wget --no-check-certificate -q -O bundling-vmess "https://raw.githubusercontent.com/$repogithub/bundling-vmess.sh"
 wget --no-check-certificate -q -O bundling-vless "https://raw.githubusercontent.com/$repogithub/bundling-vless.sh"
