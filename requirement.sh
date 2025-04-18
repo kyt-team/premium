@@ -183,6 +183,7 @@ wget --no-check-certificate -q -O add-limit "https://raw.githubusercontent.com/$
 wget --no-check-certificate -q -O change-limit "https://raw.githubusercontent.com/$repogithub/alterego.sh"
 wget --no-check-certificate -q -O unban-ssh "https://raw.githubusercontent.com/$repogithub/bigetron.sh"
 wget --no-check-certificate -q -O ban-ssh "https://raw.githubusercontent.com/$repogithub/blacklist.sh"
+wget --no-check-certificate -q -O update "https://raw.githubusercontent.com/$repogithub/update.sh"
 chmod +x menu-ss
 chmod +x menu-setting
 chmod +x menu-ssh
@@ -209,6 +210,7 @@ chmod +x change-port
 chmod +x menu2
 chmod +x menu3
 chmod +x menu
+chmod +x update
 chmod +x add-ssh
 chmod +x trial-ssh
 chmod +x force-host
