@@ -164,8 +164,6 @@ echo -e "${GREEN}[5]${NC} ⚙️  MENU SETTING    ${GREEN}[6]${NC} 📖 MENU INF
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 echo -e   ""
-echo -e "[CTRL + C] For Exit From Main Menu"
-echo -e   ""
 read -p "Select From Options [1-6 or x] :  " menu
 echo -e ""
 case $menu in
