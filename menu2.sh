@@ -125,7 +125,7 @@ COLOR1='\033[0;36m'
     d1=$(date -d "$ExpRaw" +%s)
     d2=$(date -d "$now_date" +%s)
     dayleft=$(( (d1 - d2) / 86400 ))
-fi
+    
 # Header Box
 echo -e "${COLOR1}╔══════════════════════════════════════════════════════╗${NC}"
 echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                   ${COLOR1}║${NC}"
