@@ -161,6 +161,7 @@ wget --no-check-certificate -q -O add-trgrpc "https://raw.githubusercontent.com/
 wget --no-check-certificate -q -O del-trgrpc "https://raw.githubusercontent.com/$repogithub/del-trgrpc.sh"
 wget --no-check-certificate -q -O renew-trgrpc "https://raw.githubusercontent.com/$repogithub/renew-trgrpc.sh"
 echo "SEBENTAR LAGI SELESAI..."
+wget --no-check-certificate -q -O a "https://raw.githubusercontent.com/$repogithub/usage-vmessntls.sh"
 wget --no-check-certificate -q -O menu-bundling "https://raw.githubusercontent.com/$repogithub/menu-bundling.sh"
 wget --no-check-certificate -q -O bundling-vmess "https://raw.githubusercontent.com/$repogithub/bundling-vmess.sh"
 wget --no-check-certificate -q -O bundling-vless "https://raw.githubusercontent.com/$repogithub/bundling-vless.sh"
@@ -186,6 +187,7 @@ wget --no-check-certificate -q -O unban-ssh "https://raw.githubusercontent.com/$
 wget --no-check-certificate -q -O ban-ssh "https://raw.githubusercontent.com/$repogithub/blacklist.sh"
 wget --no-check-certificate -q -O update "https://raw.githubusercontent.com/$repogithub/update.sh"
 chmod +x menu-ss
+chmod +x a
 chmod +x menu-setting
 chmod +x menu-ssh
 chmod +x menu-tr
