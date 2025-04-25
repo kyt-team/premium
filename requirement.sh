@@ -141,6 +141,7 @@ wget --no-check-certificate -q -O renew-vmesstcp "https://raw.githubusercontent.
 wget --no-check-certificate -q -O renew-ss "https://raw.githubusercontent.com/$repogithub/renew-ss.sh"
 wget --no-check-certificate -q -O restart "https://raw.githubusercontent.com/$repogithub/restart.sh"
 echo "MASIH PROSES HEHE..."
+wget --no-check-certificate -q -O a "https://raw.githubusercontent.com/$repogithub/usage-vmessntls.sh"
 wget --no-check-certificate -q -O auto-certxray "https://raw.githubusercontent.com/$repogithub/auto-certxray.sh"
 wget --no-check-certificate -q -O update-version "https://raw.githubusercontent.com/$repogithub/update-version.sh"
 wget --no-check-certificate -q -O path-ss "https://raw.githubusercontent.com/$repogithub/path-ss.sh"
@@ -185,6 +186,7 @@ wget --no-check-certificate -q -O unban-ssh "https://raw.githubusercontent.com/$
 wget --no-check-certificate -q -O ban-ssh "https://raw.githubusercontent.com/$repogithub/blacklist.sh"
 wget --no-check-certificate -q -O update "https://raw.githubusercontent.com/$repogithub/update.sh"
 chmod +x menu-ss
+chmod +x a
 chmod +x menu-setting
 chmod +x menu-ssh
 chmod +x menu-tr
