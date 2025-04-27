@@ -1,12 +1,12 @@
 #!/bin/bash
 if [[ $(ulimit -c) != "0" ]]; then
-  echo "Im Watching You..."
+  echo "Saya Memantau Anda..."
   echo "- @user_legend"
   exit 1
 fi
 
-red='\e[1;31m'
-green='\e[0;32m'
+merah='\e[1;31m'
+hijau='\e[0;32m'
 NC='\e[0m'
 IP=$(curl -sS ipinfo.io/ip > /tmp/ipaddress.txt)
 MYIP=$(cat /tmp/ipaddress.txt)
@@ -14,22 +14,22 @@ MYIP=$(cat /tmp/ipaddress.txt)
 # cek wget & curl
 if ! which wget > /dev/null; then
 clear
-echo -e "${red}Wah Mau Belajar Nakal Yah !${NC}"
+echo -e "${merah}Wah Mau Belajar Nakal Yah !${NC}"
 sleep 2
 exit 0
 clear
 else
-echo "Wget is already installed"
+echo "Wget sudah terinstal"
 fi
 
 if ! which curl > /dev/null; then
 clear
-echo -e "${red}Wah Mau Belajar Nakal Yah !${NC}"
+echo -e "${merah}Wah Mau Belajar Nakal Yah !${NC}"
 sleep 2
 exit 0
 clear
 else
-echo "curl is already installed"
+echo "curl sudah terinstal"
 fi
 
 fileee=/usr/bin/wget
@@ -37,11 +37,11 @@ minimumsize=400000
 actualsize=$(wc -c <"$fileee")
 if [ $actualsize -ge $minimumsize ]; then
 clear
-echo -e "${green}Checking...${NC}"
+echo -e "${hijau}Memeriksa...${NC}"
 else
 clear
-echo -e "${red}Permission Denied!${NC}";
-echo "Reason : Modified Package To Bypass Sc"
+echo -e "${merah}Permission Denied!${NC}";
+echo "Alasan: Paket Dimodifikasi untuk Menghindari Script"
 exit 0
 fi
 
@@ -51,11 +51,11 @@ clear
 actualsizex=$(wc -c <"$fileeex")
 if [ $actualsizex -ge $minimumsizex ]; then
 clear
-echo -e "${green}Checking...${NC}"
+echo -e "${hijau}Memeriksa...${NC}"
 else
 clear
-echo -e "${red}Permission Denied!${NC}";
-echo "Reason : Modified Package To Bypass Sc"
+echo -e "${merah}Permission Denied!${NC}";
+echo "Alasan: Paket Dimodifikasi untuk Menghindari Script"
 exit 0
 fi
 
@@ -84,23 +84,24 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 			echo ""
-			echo "A client with the specified name was already created, please choose another name."
+			echo "Akun dengan nama tersebut sudah ada, silakan pilih nama lain."
 			exit 1
 		fi
 	done
 cekvalidasi=$(cat /usr/local/etc/xray/config.json | grep -i "$user" | awk {'print $2'} | head -1 | wc -l)
 if [ "$cekvalidasi" == "1" ]; then
 echo ""
-echo "user $user already exist"
-echo "please choose another name"
+echo "user $user sudah ada"
+echo "silakan pilih nama lain"
 exit 1
 fi
-uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "Expired (days): " masaaktif
+name=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $2}')
+uuid="$name-$user"
+read -p "Expired (hari): " masaaktif
 KEY=$(cat /etc/william/profile/key 2>/dev/null)
 CHATID=$(cat /etc/william/profile/key 2>/dev/null)
 if [[ -n $KEY || -n $CHATID ]]; then
-read -p "Limit IP Login (enter or type 0 for no limit): " limit_ip
+read -p "Batas IP Login (masukkan atau ketik 0 untuk tanpa batas): " limit_ip
 if [[ -z "$limit_ip" || "$limit_ip" == "0" ]]; then
   limit_ip="0"
 fi
@@ -155,15 +156,15 @@ echo -e "━━━━━━━━━━━━━━━━━━━━"
 echo -e "Remarks : ${user}"
 ceklimit_ip=$(cat /etc/william/limit-xray/vmessws/$user 2>/dev/null)
 if [[ -z $ceklimit_ip ]]; then
-echo -e "Limit IP : Not Active"
+echo -e "Limit IP : Tidak Aktif"
 else
 if [ "$ceklimit_ip" == "0" ]; then
-echo -e "Limit IP : No Limit IP Login"
+echo -e "Limit IP : Tanpa Batas IP Login"
 else
 echo -e "Limit IP : $limit_ip"
 fi
 fi
-echo -e "IP Address : ${MYIP}"
+echo -e "Alamat IP : ${MYIP}"
 echo -e "Domain : ${domain}"
 if [[ "$ngecek" = "443" ]]; then
 echo -e "DNS Domain : $nsdomain"
