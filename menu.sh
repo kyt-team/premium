@@ -154,7 +154,7 @@ echo -e "💻 OS                : $(grep -w PRETTY_NAME /etc/os-release | cut -d
 echo -e "🌍 Domain            : $(cat /etc/xray/domain)"
 echo -e "🔐 IP Address        : ${ipsaya}"
 echo -e "🏢 ISP               : ${ISP}"
-echo -e "🏙️  City              : ${CITY}"
+echo -e "🏙️ City              : ${CITY}"
 echo -e "👤 Client            : ${Name}"
 echo -e "📅 Expiry Date       : ${Exp} (${DayLeft})"
 echo ""
