@@ -146,16 +146,18 @@ echo -e "${COLOR1}╔═══════════════════�
 echo -e "${COLOR1}║${NC}                  \e[1;35m<< ALVI TUNNEL >>\e[0m                   ${COLOR1}║${NC}"
 echo -e "${COLOR1}╚══════════════════════════════════════════════════════╝${NC}"
 
-# Informasi VPS
-echo -e "  ${BLUE}• ${GREEN}Server Uptime       ${NC}= $(uptime -p | cut -d ' ' -f 2-10000)"
-echo -e "  ${BLUE}• ${GREEN}Operating System    ${NC}= $(grep -w PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '\"')( $(uname -m) )"
-echo -e "  ${BLUE}• ${GREEN}Domain              ${NC}= $(cat /etc/xray/domain)"
-echo -e "  ${BLUE}• ${GREEN}Server IP           ${NC}= ${ipsaya}"
-echo -e "  ${BLUE}• ${GREEN}ISP-VPS             ${NC}= ${ISP}"
-echo -e "  ${BLUE}• ${GREEN}City                ${NC}= ${CITY}"
-echo -e "  ${BLUE}• ${GREEN}Clients Name        ${NC}= ${Name}${NC}"
-echo -e "  ${BLUE}• ${GREEN}Script Expired      ${NC}= ${Exp} (${DayLeft})${NC}"
-echo -e "${BLUE} ${NC}"
+# VPS Info Section
+echo -e "${GREEN}📡 VPS INFORMATION${NC}"
+echo -e "${BLUE}────────────────────────────────────────────────────────${NC}"
+echo -e "🟢 Uptime            : $(uptime -p | cut -d ' ' -f 2-10000)"
+echo -e "💻 OS                : $(grep -w PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '\"') ($(uname -m))"
+echo -e "🌍 Domain            : $(cat /etc/xray/domain)"
+echo -e "🔐 IP Address        : ${ipsaya}"
+echo -e "🏢 ISP               : ${ISP}"
+echo -e "🏙️  City              : ${CITY}"
+echo -e "👤 Client            : ${Name}"
+echo -e "📅 Expiry Date       : ${Exp} (${DayLeft})"
+echo ""
 # Menu Utama
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━ MENU UTAMA ━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e      "${GREEN}[1]${NC} 🌐 MENU SSH        ${GREEN}[4]${NC} 🔐 MENU TROJAN"
