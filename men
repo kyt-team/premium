@@ -1,0 +1,203 @@
+#!/bin/bash
+if [[ $(ulimit -c) != "0" ]]; then
+  echo "Im Watching You..."
+  echo "- @user_legend"
+  exit 1
+fi
+
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+IP=$(curl -sS ipinfo.io/ip > /tmp/ipaddress.txt)
+MYIP=$(cat /tmp/ipaddress.txt)
+ipsaya=$(wget -qO- ipinfo.io/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+data_ip="https://raw.githubusercontent.com/kyt-team/regip/main/ip"
+checking_sc() {
+  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
+  if [[ $date_list < $useexp ]]; then
+    echo -ne
+  else
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e "\033[42m          404 NOT FOUND AUTOSCRIPT          \033[0m"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e ""
+    echo -e "            ${RED}PERMISSION DENIED !${NC}"
+    echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
+    echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
+    echo -e "             \033[0;33mContact Admin :${NC}"
+    echo -e "      \033[0;36mTelegram${NC} t.me/Alvi_cell"
+    echo -e "      ${GREEN}WhatsApp${NC} wa.me/6282183496832"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    exit
+  fi
+}
+checking_sc
+clear
+
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+#!/bin/bash
+Name=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $2}')
+MYIP=$(curl -sS ipv4.icanhazip.com)
+res=$(curl -sS https://raw.githubusercontent.com/kyt-team/regip/main/ip | grep $MYIP | awk '{print $3}')
+
+# Jika Expired
+if [ "$res" = "Expired" ]; then
+    Exp="\e[31mExpired\033[0m"
+    DayLeft="0 Hari"
+else
+    Exp=$res
+    # Hitung sisa masa aktif (dayleft)
+    today=$(date +%s)
+    exp_date=$(date -d "$Exp" +%s)
+    sisa_hari=$(( (exp_date - today) / 86400 ))
+    
+    if [ $sisa_hari -lt 0 ]; then
+        DayLeft="\e[31m0 Hari (Expired)\033[0m"
+    else
+        DayLeft="\e[32m${sisa_hari} Hari\033[0m"
+    fi
+fi
+
+# Tampilkan hasil
+#echo -e "Status Expired: $Exp"
+#echo -e "Sisa Masa Aktif: $DayLeft"
+
+
+
+
+UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
+# // Exporting Language to UTF-8
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US.UTF-8'
+export LC_CTYPE='en_US.utf8'
+# cek wget & curl
+if ! which wget > /dev/null; then
+clear
+echo -e "${red}Wah Mau Belajar Nakal Yah !${NC}"
+sleep 2
+exit 0
+clear
+else
+echo "Wget is already installed"
+fi
+
+if ! which curl > /dev/null; then
+clear
+echo -e "${red}Wah Mau Belajar Nakal Yah !${NC}"
+sleep 2
+exit 0
+clear
+else
+echo "curl is already installed"
+fi
+
+fileee=/usr/bin/wget
+minimumsize=400000
+actualsize=$(wc -c <"$fileee")
+if [ $actualsize -ge $minimumsize ]; then
+clear
+echo -e "${green}Checking...${NC}"
+else
+clear
+echo -e "${red}Permission Denied!${NC}";
+echo "Reason : Modified Package To Bypass Sc"
+exit 0
+fi
+
+fileeex=/usr/bin/curl
+minimumsizex=15000
+clear
+actualsizex=$(wc -c <"$fileeex")
+if [ $actualsizex -ge $minimumsizex ]; then
+clear
+echo -e "${green}Checking...${NC}"
+else
+clear
+echo -e "${red}Permission Denied!${NC}";
+echo "Reason : Modified Package To Bypass Sc"
+exit 0
+fi
+
+
+# data server
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+cekcloudflare=$(curl -sS http://ip-api.com/json | jq .as | grep -o "Cloudflare")
+if [[ "$cekcloudflare" = "Cloudflare" ]]; then
+cekdomen=$(cat /etc/xray/domain)
+MYIP=$(dig +short "$cekdomen" | head -n 1)
+fi
+repogithub='kyt-team/premium/main'
+clear
+# Warna
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+COLOR1='\033[0;36m'
+
+# Header Box
+# Header
+echo -e "${COLOR1}╔════════════════════════════════════════════════════════╗${NC}"
+echo -e "${COLOR1}║${NC}              🌐  \e[1;35mALVI TUNNEL - PREMIUM SCRIPT\e[0m        ${COLOR1}║${NC}"
+echo -e "${COLOR1}╚════════════════════════════════════════════════════════╝${NC}"
+echo ""
+
+# VPS Info Section
+echo -e "${GREEN}📡 VPS INFORMATION${NC}"
+echo -e "${BLUE}────────────────────────────────────────────────────────${NC}"
+echo -e "🟢 Uptime            : $(uptime -p | cut -d ' ' -f 2-10000)"
+echo -e "💻 OS                : $(grep -w PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '\"') ($(uname -m))"
+echo -e "🌍 Domain            : $(cat /etc/xray/domain)"
+echo -e "🔐 IP Address        : ${ipsaya}"
+echo -e "🏢 ISP               : ${ISP}"
+echo -e "🏙️  City              : ${CITY}"
+echo -e "👤 Client            : ${Name}"
+echo -e "📅 Expiry Date       : ${Exp} (${DayLeft})"
+echo ""
+
+# Menu
+echo -e "${BLUE}━━━━━━━━━━━━━━━ ⛩️  MAIN MENU  ⛩️ ━━━━━━━━━━━━━━━${NC}"
+echo -e "${GREEN}[1]${NC} 🔐 SSH MANAGEMENT      ${GREEN}[4]${NC} ⚔️  TROJAN MANAGEMENT"
+echo -e "${GREEN}[2]${NC} ⚡ VMESS MANAGEMENT    ${GREEN}[5]${NC} ⚙️  SYSTEM SETTINGS"
+echo -e "${GREEN}[3]${NC} 🧩 VLESS MANAGEMENT    ${GREEN}[6]${NC} 📘 SCRIPT INFORMATION"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+
+read -p "❓ Select an option [1-6 or x] : " menu
+
+echo -e ""
+case $menu in
+1)
+menu-ssh
+;;
+2)
+menu-vmess
+;;
+3)
+menu-vless
+;;
+4)
+menu-trws
+;;
+5)
+menu-setting
+;;
+6)
+menu3
+;;
+x)
+clear
+menu
+;;
+*)
+echo " Please Choose Number !"
+sleep 2 
+menu
+;;
+esac
