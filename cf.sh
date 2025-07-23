@@ -84,12 +84,12 @@ domain=$(cat /etc/xray/domain)
 nsdomain=$(cat /etc/ns/domain)
 
 apt install jq curl -y
-DOMAIN=x-project-vpn.com
+DOMAIN=alvicell.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}69.x-project-vpn.com
-NS_DOMAIN=dns.${sub}69.x-project-vpn.com
-CF_ID=rizkihdyt6@gmail.com
-CF_KEY=15c999c8f900f4d36851f95d05f9c34b9130a
+SUB_DOMAIN=${sub}69.alvicell.my.id
+NS_DOMAIN=dns.${sub}69.alvicell.my.id
+CF_ID=Alvibackup9@gmail.com
+CF_KEY=3f47bac0cfac6554c619bb734fd79a70cdaf2
 set -euo pipefail
 echo "Updating DNS for ${SUB_DOMAIN}..."
 #==============#
