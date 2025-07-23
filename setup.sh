@@ -141,9 +141,9 @@ sleep 4
   echo "Check Domain...."
   sleep 3
 MYIP=$(curl ipinfo.io/ip)
-AUTH_EMAIL="rizkihdyt6@gmail.com"
-AUTH_KEY="15c999c8f900f4d36851f95d05f9c34b9130a"
-DOMAIN="x-project-vpn.com"
+AUTH_EMAIL="Alvibackup9@gmail.com"
+AUTH_KEY="3f47bac0cfac6554c619bb734fd79a70cdaf2"
+DOMAIN="alvicell.my.id"
 
 ZONE_ID=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${AUTH_EMAIL}" \
