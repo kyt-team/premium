@@ -130,7 +130,7 @@ elif [[ $opsi == "2" ]]; then
 echo ""
 echo "Opsi 2 terpilih ✓"
 sleep 2
-echo -e "Anda Akan Menggunakan Domain ${bold}alvicell.my.id{NC}"
+echo -e "Anda Akan Menggunakan Domain ${bold}alvicell.my.id${NC}"
 sleep 2
 echo -e "Dengan Random Subdomain Yang Dipilih Oleh Script"
 sleep 2
