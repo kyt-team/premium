@@ -1,4 +1,5 @@
 #!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
 
 # Warna dan teks
 bold='\033[1m'
@@ -7,8 +8,9 @@ green='\e[0;32m'
 yellow='\e[1;33m'
 NC='\e[0m'
 
-# Update & install paket-paket penting
-apt update && apt install -y wget curl lolcat figlet jq dnsutils socat python3-pip
+# Update & install paket-paket penting secara non-interaktif
+apt update && apt upgrade -y
+apt install -y wget curl figlet jq dnsutils socat python3-pip git lolcat > /dev/null 2>&1
 
 # Validasi OS
 source /etc/os-release
@@ -42,7 +44,7 @@ fi
 # Deteksi IP publik
 MYIP=$(curl -sS ipinfo.io/ip)
 
-# Ganti iptables ke legacy (untuk script lama)
+# Gunakan iptables legacy (opsional)
 update-alternatives --set iptables /usr/sbin/iptables-legacy 2>/dev/null
 update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy 2>/dev/null
 
@@ -66,7 +68,7 @@ while [[ ! "$opsi" =~ ^[1-2]$ ]]; do
     echo ""
 done
 
-# Setup domain manual atau dari script
+# Setup domain
 if [[ $opsi == "1" ]]; then
     read -p "Input Your Domain        : " domen
     read -p "Input Your NS Domain     : " domens
@@ -96,7 +98,7 @@ else
 
     if [ -z "$ip_hasil" ]; then
         echo "Tidak ditemukan IP, pointing baru..."
-        wget --no-check-certificate -q https://raw.githubusercontent.com/kyt-team/premium/main/cf.sh
+        wget -q https://raw.githubusercontent.com/kyt-team/premium/main/cf.sh
         chmod +x cf.sh && ./cf.sh && rm -f cf.sh
     else
         echo "IP ditemukan, menggunakan domain: $ip_hasil"
@@ -118,14 +120,14 @@ else
     echo -e "${green}Domain valid! Mengarah ke VPS.${NC}"
 fi
 
-# Setup direktori
+# Setup direktori & file penting
 mkdir -p /etc/xray/vmess /etc/william /var/lib/premium-script
 touch /etc/xray/domain /etc/v2ray/domain /var/lib/premium-script/ipvps.conf /etc/william/subscribe
 
-# Setup Sertifikat SSL (gunakan acme.sh)
+# Setup SSL
 hostnameku="$domainku"
 systemctl stop nginx 2>/dev/null
-apt install -y socat
+apt install -y socat > /dev/null 2>&1
 export ACME_USE_WGET=1
 [ ! -d /root/.acme.sh ] && curl https://get.acme.sh | sh
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
@@ -138,10 +140,10 @@ chown -R nobody:nogroup /etc/ssl/private/
 chmod 777 /etc/ssl/private/
 chmod +x /etc/ssl/private/fullchain.pem /etc/ssl/private/privkey.pem
 
-# Jalankan semua installer
+# Jalankan semua script
 repo="kyt-team/premium/main"
 for script in setup-sshvpn.sh set-br.sh ssh-ws-ssl.sh sstp.sh wireguard.sh only-l2tp.sh requirement.sh; do
-    wget --no-check-certificate -q "https://raw.githubusercontent.com/$repo/$script"
+    wget -q "https://raw.githubusercontent.com/$repo/$script"
     chmod +x "$script" && ./"$script" && rm -f "$script"
 done
 
@@ -152,18 +154,13 @@ pip3 install -r requirements.txt
 mv knockpy ingfo /usr/bin
 cd .. && rm -rf subfinders
 chmod +x /usr/bin/ingfo
-cd
 
-# Cleanup
-rm -rf log-install.txt
-chown -R nobody:nogroup /etc/ssl/private/
-chmod 777 /etc/ssl/private/
-chmod +x /etc/ssl/private/fullchain.pem /etc/ssl/private/privkey.pem
+# Final cleanup
+rm -rf /root/log-install.txt
 systemctl restart xray
-
-# Catatan Akhir
-echo -e "${green}INSTALLATION COMPLETED!${NC}"
-echo -e "Log: /root/log-install.txt"
 echo '1' > /home/ver
+
+# Selesai
+echo -e "${green}INSTALLATION COMPLETED! VPS AKAN REBOOT${NC}"
 sleep 15
 reboot
