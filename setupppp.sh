@@ -7,11 +7,31 @@ green='\e[0;32m'
 NC='\e[0m'
 
 clear
-echo -e "${bold}${green}Script Installer VPS - Support Ubuntu 20.04 , 22.04, 24.04, 25.04${NC}"
-if [[ "$VERSION_ID" != "20.04" && "$VERSION_ID" != "22.04" && "$VERSION_ID" != "24.04.01" && "$VERSION_ID" != "25.04" ]]; then
-  echo -e "${red}Versi Ubuntu tidak didukung. Hanya Ubuntu 20.04, 22.04, 24.04, dan 25.04 yang didukung.${NC}"
+# Deteksi OS
+if [[ -e /etc/os-release ]]; then
+  source /etc/os-release
+else
+  echo -e "${red}File /etc/os-release tidak ditemukan. Tidak bisa mendeteksi versi OS.${NC}"
   exit 1
 fi
+
+# Cek apakah Ubuntu
+if [[ "$ID" != "ubuntu" ]]; then
+  echo -e "${red}Script ini hanya mendukung Ubuntu.${NC}"
+  exit 1
+fi
+
+# Cek versi Ubuntu
+case "$VERSION_ID" in
+  20.04*|22.04*|24.04*|25.04*)
+    echo -e "${green}Versi Ubuntu $VERSION_ID terdeteksi. Melanjutkan instalasi...${NC}"
+    sleep 2
+    ;;
+  *)
+    echo -e "${red}Versi Ubuntu tidak didukung. Hanya Ubuntu 20.04, 22.04, 24.04, dan 25.04 yang didukung.${NC}"
+    exit 1
+    ;;
+esac
 
 # Update & Install dependencies
 apt update -y && apt upgrade -y
