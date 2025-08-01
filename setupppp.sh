@@ -8,7 +8,7 @@ NC='\e[0m'
 
 clear
 echo -e "${bold}${green}Script Installer VPS - Support Ubuntu 20.04 , 22.04, 24.04, 25.04${NC}"
-if [[ "$VERSION_ID" != "20.04" && "$VERSION_ID" != "22.04" && "$VERSION_ID" != "24.04" && "$VERSION_ID" != "25.04" ]]; then
+if [[ "$VERSION_ID" != "20.04" && "$VERSION_ID" != "22.04" && "$VERSION_ID" != "24.04.01" && "$VERSION_ID" != "25.04" ]]; then
   echo -e "${red}Versi Ubuntu tidak didukung. Hanya Ubuntu 20.04, 22.04, 24.04, dan 25.04 yang didukung.${NC}"
   exit 1
 fi
