@@ -17,21 +17,17 @@ fi
 
 # Cek apakah Ubuntu
 if [[ "$ID" != "ubuntu" ]]; then
-  echo -e "${red}Script ini hanya mendukung Ubuntu.${NC}"
+  echo -e "${red}Script ini hanya mendukung sistem operasi Ubuntu.${NC}"
   exit 1
 fi
 
-# Cek versi Ubuntu
-case "$VERSION_ID" in
-  20.04*|22.04*|24.04*|25.04*)
-    echo -e "${green}Versi Ubuntu $VERSION_ID terdeteksi. Melanjutkan instalasi...${NC}"
-    sleep 2
-    ;;
-  *)
-    echo -e "${red}Versi Ubuntu tidak didukung. Hanya Ubuntu 20.04, 22.04, 24.04, dan 25.04 yang didukung.${NC}"
-    exit 1
-    ;;
-esac
+echo -e "${green}Versi Ubuntu $VERSION_ID terdeteksi. Melanjutkan instalasi...${NC}"
+sleep 2
+
+# Tambahkan proses instalasi di bawah ini
+echo -e "${green}🛠️  Menjalankan proses instalasi...${NC}"
+# contoh:
+# apt update && apt install -y nginx
 
 # Update & Install dependencies
 apt update -y && apt upgrade -y
