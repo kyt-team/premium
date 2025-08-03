@@ -241,7 +241,7 @@ echo $cek_domain > /etc/v2ray/domain
 echo dns.$cek_domain > /etc/ns/domain
 fi
 fi
-done
+
 
 sleep 3
 source /etc/os-release
