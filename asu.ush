@@ -240,7 +240,7 @@ echo $cek_domain > /etc/xray/domain
 echo $cek_domain > /etc/v2ray/domain
 echo dns.$cek_domain > /etc/ns/domain
 fi
-fi
+
 
 
 sleep 3
