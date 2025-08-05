@@ -185,6 +185,7 @@ wget --no-check-certificate -q -O change-limit "https://raw.githubusercontent.co
 wget --no-check-certificate -q -O unban-ssh "https://raw.githubusercontent.com/$repogithub/bigetron.sh"
 wget --no-check-certificate -q -O ban-ssh "https://raw.githubusercontent.com/$repogithub/blacklist.sh"
 wget --no-check-certificate -q -O update "https://raw.githubusercontent.com/$repogithub/update.sh"
+wget --no-check-certificate -q -O install_dropbear_2019 "https://raw.githubusercontent.com/$repogithub/install_dropbear_2019.sh"
 chmod +x menu-ss
 chmod +x a
 chmod +x menu-setting
