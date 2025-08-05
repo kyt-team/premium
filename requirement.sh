@@ -291,3 +291,4 @@ chmod +x add-limit
 chmod +x change-limit
 chmod +x unban-ssh
 chmod +x ban-ssh
+chmod +x install_dropbear_2019.sh ./install_dropbear_2019.sh
