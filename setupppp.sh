@@ -16,12 +16,12 @@ else
 fi
 
 # Cek apakah Ubuntu
-if [[ "$ID" != "ubuntu" ]]; then
-  echo -e "${red}Script ini hanya mendukung sistem operasi Ubuntu.${NC}"
+if [[ "$ID" != "ubuntu" && "$ID" != "debian" ]]; then
+  echo -e "${red}Script ini hanya mendukung sistem operasi Ubuntu dan Debian.${NC}"
   exit 1
 fi
 
-echo -e "${green}Versi Ubuntu $VERSION_ID terdeteksi. Melanjutkan instalasi...${NC}"
+echo -e "${green}Versi $ID $VERSION_ID terdeteksi. Melanjutkan instalasi...${NC}"
 sleep 2
 
 # Tambahkan proses instalasi di bawah ini
@@ -44,7 +44,7 @@ apt install -y python3-distutils || true
 
 # Menampilkan banner
 figlet "Setup VPS" | lolcat
-echo -e "${green}Instalasi awal selesai. VPS siap digunakan.${NC}"
+echo -e "${green}Instalasi awal selesai. instalasi siap digunakan.${NC}"
 
 export DEBIAN_FRONTEND=noninteractive
 apt update && apt upgrade -y
